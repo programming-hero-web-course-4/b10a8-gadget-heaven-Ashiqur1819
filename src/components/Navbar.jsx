@@ -22,7 +22,7 @@ const Navbar = () => {
       </>
     );
   return (
-    <div className="navbar bg-c1 px-3 md:px-8 lg:px-12 py-3">
+    <div className="navbar bg-c1 px-4 md:px-8 lg:px-12 py-3">
       <div className="navbar-start gap-3 items-center text-white">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="lg:hidden">

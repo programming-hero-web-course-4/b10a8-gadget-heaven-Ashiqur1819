@@ -4,9 +4,9 @@ import Navbar from './components/Navbar';
 
 const App = () => {
   return (
-    <div>
+    <div className='font-sora'>
       <Navbar></Navbar>
-      <div className="max-w-7xl mx-auto px-12">
+      <div>
         <Outlet></Outlet>
       </div>
     </div>
