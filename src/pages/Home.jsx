@@ -5,12 +5,11 @@ import Hero from "../components/Hero";
 const Home = () => {
     return (
       <div>
-        <div className="relative">
+        <div className="relative mb-96">
           <Banner></Banner>
-          <div className="max-w-7xl mx-auto">
-            <Hero></Hero>
-          </div>
+        <Hero></Hero>
         </div>
+
       </div>
     );
 };
