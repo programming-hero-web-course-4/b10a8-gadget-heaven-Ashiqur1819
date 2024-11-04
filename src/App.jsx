@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 
 const App = () => {
   return (
-    <div className='font-sora'>
+    <div className='font-sora bg-base-200'>
       <Navbar></Navbar>
       <div>
         <Outlet></Outlet>

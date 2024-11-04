@@ -183,7 +183,7 @@
   {
     "product_id": "GAD0011",
     "product_title": "Smartwatch FitPro X",
-    "product_image": "https://i.ibb.co.com/v3ChQzH/Smartwatch-Fit-Pro-X.webp",
+    "product_image": "https://i.ibb.co.com/RBYCMq0/Smartwatch-Fit-Pro-X.jpg",
     "category": "Smartwatches",
     "price": 199.99,
     "description": "Fitness smartwatch with heart rate monitor, GPS, and advanced activity tracking features.",
@@ -268,6 +268,42 @@
     ],
     "availability": true,
     "rating": 4.6,
+    "warranty_period": "1 year"
+  },
+  {
+    "product_id": "GAD0016",
+    "product_title": "Tablet Pro 11",
+    "product_image": "https://i.ibb.co.com/9gThqFC/Tablet-Pro-11.jpg",
+    "category": "Tablets",
+    "price": 649.99,
+    "description": "High-performance tablet with a stunning display and powerful processor, ideal for both work and entertainment.",
+    "Specification": [
+      "11-inch Liquid Retina Display",
+      "128GB Storage",
+      "8GB RAM",
+      "Face ID",
+      "USB-C Charging"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "warranty_period": "2 years"
+  },
+  {
+    "product_id": "GAD0017",
+    "product_title": "Tablet Lite 8",
+    "product_image": "https://i.ibb.co.com/ZG6cyqh/Tablet-Lite-8.webp",
+    "category": "Tablets",
+    "price": 249.99,
+    "description": "Compact tablet with essential features for everyday browsing, reading, and streaming.",
+    "Specification": [
+      "8-inch HD Display",
+      "64GB Storage",
+      "3GB RAM",
+      "Expandable Storage",
+      "10-Hour Battery Life"
+    ],
+    "availability": true,
+    "rating": 4.3,
     "warranty_period": "1 year"
   }
 ]

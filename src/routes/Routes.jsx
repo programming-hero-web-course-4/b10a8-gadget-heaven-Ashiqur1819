@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Statistics from "../pages/Statistics";
 import Dashboard from "../pages/Dashboard";
 import Contact from "../pages/Contact"
+import GadgetDetails from "../pages/GadgetDetails";
 
 
 const router = createBrowserRouter([
@@ -13,23 +14,24 @@ const router = createBrowserRouter([
     element: <App></App>,
     errorElement: <Error></Error>,
     children: [
-        {
-            path: "/",
-            element: <Home></Home>
-        },
-        {
-            path: "/statistics",
-            element: <Statistics></Statistics>
-        },
-        {
-            path: "/dashboard",
-            element: <Dashboard></Dashboard>
-        },
-        {
-            path: "/contact",
-            element: <Contact></Contact>
-        }
-    ]
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/statistics",
+        element: <Statistics></Statistics>,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "/gadgets/:product_id",
+        loader: () => fetch("gadgets.json"),
+        element: <GadgetDetails></GadgetDetails>
+      },
+    ],
   },
 ]);
 
