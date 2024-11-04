@@ -1,10 +1,10 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+
+import { NavLink} from "react-router-dom";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
 
-
 const Navbar = () => {
+
     const links = (
       <>
         <li>

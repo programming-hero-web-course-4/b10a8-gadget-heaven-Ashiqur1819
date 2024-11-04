@@ -5,7 +5,10 @@ import Home from "../pages/Home";
 import Statistics from "../pages/Statistics";
 import Dashboard from "../pages/Dashboard";
 import Contact from "../pages/Contact"
-import GadgetDetails from "../pages/GadgetDetails";
+import Gadgets from "../components/Gadgets";
+import GadgetDetails from "../pages/GadgetDetails"
+
+
 
 
 const router = createBrowserRouter([
@@ -16,7 +19,20 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        loader: () => fetch("categories.json"),
         element: <Home></Home>,
+        children: [
+          {
+            path: "/",
+            loader: () => fetch("../gadgets.json"),
+            element: <Gadgets></Gadgets>,
+          },
+          {
+            path: "/category/:category",
+            loader: () => fetch("../gadgets.json"),
+            element: <Gadgets></Gadgets>,
+          },
+        ],
       },
       {
         path: "/statistics",
@@ -27,10 +43,15 @@ const router = createBrowserRouter([
         element: <Dashboard></Dashboard>,
       },
       {
-        path: "/gadgets/:product_id",
-        loader: () => fetch("gadgets.json"),
-        element: <GadgetDetails></GadgetDetails>
+        path: "/contact",
+        element: <Contact></Contact>,
       },
+
+      {
+        path: "/gadget/:product_id",
+        loader: () => fetch("../gadgets.json"),
+        element: <GadgetDetails></GadgetDetails>
+      }
     ],
   },
 ]);

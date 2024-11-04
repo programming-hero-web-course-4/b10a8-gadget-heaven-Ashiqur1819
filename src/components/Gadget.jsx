@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 const Gadget = ({gadget}) => {
 const {product_id, product_image, product_title, price } = gadget;
+console.log(product_id)
+
     return (
       <div className="border bg-white p-5 rounded-xl space-y-5 flex flex-col">
         <div className="flex-grow">
@@ -18,7 +20,7 @@ const {product_id, product_image, product_title, price } = gadget;
           </h3>
           <p className="text-c3">${price}</p>
         </div>
-        <Link to={`/gadgets/${product_id}`}>
+        <Link to={`/gadget/${product_id}`}>
           <button className="text-left border-2 w-36 py-3 px-4 rounded-full border-c1 text-c1 font-medium">
             View Details
           </button>

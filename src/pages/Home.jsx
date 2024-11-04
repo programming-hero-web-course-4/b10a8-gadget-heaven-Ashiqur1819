@@ -1,6 +1,6 @@
+import { Outlet } from "react-router-dom";
 import Banner from "../components/Banner";
 import Categories from "../components/Categories";
-import Gadgets from "../components/Gadgets";
 import Hero from "../components/Hero";
 
 
@@ -16,7 +16,7 @@ const Home = () => {
             <Categories></Categories>
           </div>
           <div className="col-span-3">
-            <Gadgets></Gadgets>
+            <Outlet></Outlet>
           </div>
         </div>
       </div>

@@ -3,15 +3,22 @@ import { Link } from "react-router-dom";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
 
-
-
 const GadgetDetails = () => {
 
     const gadgets = useLoaderData()
    const {product_id} = useParams()
 
    const gadget = gadgets.find(gadget => gadget.product_id === product_id);
-   const {product_image, product_title, price, availability, description, Specification, rating, warranty_period} = gadget
+   const {
+     product_image,
+     product_title,
+     price,
+     availability,
+     description,
+     Specification,
+     rating,
+     warranty_period,
+   } = gadget;
 
     return (
       <div className="mb-96">
