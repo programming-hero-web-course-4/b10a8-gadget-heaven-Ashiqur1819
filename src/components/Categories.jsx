@@ -21,10 +21,11 @@ const Categories = () => {
     return (
       <div className="py-6 px-4 bg-white rounded-xl">
         <div className="p-4">
-          <NavLink>
-            <button className="btn w-full bg-base-200 text-c3 text-base rounded-full">
-              All Products
-            </button>
+          <NavLink
+            className="btn w-full bg-base-200 text-c3 text-base rounded-full"
+            to="/"
+          >
+            All Products
           </NavLink>
         </div>
         {categories.map((category, index) => (

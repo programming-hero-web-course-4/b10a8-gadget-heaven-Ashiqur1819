@@ -1,13 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import "../components/Category.css"
 
 const Category = ({category}) => {
     return (
       <div className="p-4">
-        <NavLink to={`/category/${category.category}`} >
-          <button className="btn w-full bg-base-200 text-c3 text-base rounded-full">
-            {category.category}
-          </button>
+        <NavLink
+          className="btn w-full bg-base-200 text-c3 text-base rounded-full"
+          to={`/category/${category.category}`}
+        >
+          {category.category}
         </NavLink>
       </div>
     );
