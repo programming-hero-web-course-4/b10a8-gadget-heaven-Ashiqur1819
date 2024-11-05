@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 
 
+
+
 const Gadget = ({gadget}) => {
 const {product_id, product_image, product_title, price } = gadget;
+
 
     return (
       <div className="border bg-white p-5 rounded-xl space-y-5 flex flex-col">

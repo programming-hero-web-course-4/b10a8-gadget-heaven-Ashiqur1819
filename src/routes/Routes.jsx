@@ -8,6 +8,7 @@ import Contact from "../pages/Contact"
 import Gadgets from "../components/Gadgets";
 import GadgetDetails from "../pages/GadgetDetails"
 import DashboardCart from "../components/DashboardCart";
+import DashboardWish from "../components/DashboardWish";
 
 
 
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <Dashboard></Dashboard>,
+        element: <Dashboard></Dashboard>
       },
       {
         path: "/contact",
