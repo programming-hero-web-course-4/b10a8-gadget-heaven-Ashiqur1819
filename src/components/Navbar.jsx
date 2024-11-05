@@ -1,5 +1,5 @@
 
-import { NavLink} from "react-router-dom";
+import { NavLink, useLocation} from "react-router-dom";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
 import { useContext } from "react";
@@ -13,6 +13,8 @@ const Navbar = () => {
 
   const [addToCart, setAddToCart] = useContext(CartContext)
   const [addToWish, setAddToWish] = useContext(WishContext)
+  const location = useLocation()
+  console.log(location)
 
     const links = (
       <>
@@ -31,7 +33,9 @@ const Navbar = () => {
       </>
     );
   return (
-    <div className="bg-c1">
+    <div
+      className={`${location.pathname === "/" ? "bg-c1" : "bg-white"}`}
+    >
       <div className="navbar  px-4 md:px-8 lg:px-12 py-6 max-w-7xl mx-auto">
         <div className="navbar-start gap-3 items-center text-white">
           <div className="dropdown">
@@ -58,29 +62,37 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="text-lg md:text-2xl font-semibold text-white">
+          <a
+            className={`text-lg md:text-2xl font-semibold ${
+              location.pathname === "/" ? "text-white" : "text-c2"
+            }`}
+          >
             Gadget Heaven
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-2 flex gap-3 items-center text-sm text-white font-medium">
+          <ul
+            className={`menu menu-horizontal px-2 flex gap-3 items-center text-sm font-medium  ${
+              location.pathname === "/" ? "text-white" : "text-c1"
+            }`}
+          >
             {links}
           </ul>
         </div>
         <div className="navbar-end gap-3 md:gap-6 ">
           <div className="relative">
-            <div className="text-xl md:text-2xl bg-white p-2 md:p-3 rounded-full">
+            <div className="text-xl md:text-2xl border bg-white p-2 md:p-3 rounded-full">
               <MdOutlineShoppingCart></MdOutlineShoppingCart>
             </div>
-            <div className="absolute -top-3 -right-3 bg-green-50 w-8 h-8 flex items-center justify-center rounded-full text-green-700 font-semibold border">
+            <div className="absolute -top-3 -right-3 bg-green-50 w-8 h-8 flex items-center justify-center rounded-full text-green-700 font-medium border">
               <h3>{addToCart}</h3>
             </div>
           </div>
-          <div className="text-xl md:text-2xl bg-white p-2 md:p-3 rounded-full relative">
+          <div className="text-xl md:text-2xl bg-white border p-2 md:p-3 rounded-full relative">
             <div>
               <CiHeart></CiHeart>
             </div>
-            <div className="absolute text-base -top-3 -right-3 bg-green-50 w-8 h-8 flex items-center justify-center rounded-full text-green-700 font-semibold border">
+            <div className="absolute text-base -top-3 -right-3 bg-green-50 w-8 h-8 flex items-center justify-center rounded-full text-green-700 font-medium border">
               <h3>{addToWish}</h3>
             </div>
           </div>

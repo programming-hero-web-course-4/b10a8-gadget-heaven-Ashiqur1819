@@ -5,6 +5,7 @@ import { createContext, useState } from 'react';
 import { toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRef, useEffect } from "react";
+import { ToastContainer } from 'react-toastify';
 
 export const CartContext = createContext(0);
 export const WishContext = createContext(0);
@@ -67,8 +68,8 @@ const App = () => {
   const handleRemove = (gadget) => {
     const remainingGadgets = addGadget.filter(gad => gad.product_id !== gadget.product_id)
     setAddGadget(remainingGadgets)
-    toast.success(`Successfully Removed.`);
     handleAddToCart(setAddToCart(addToCart - 1));
+    toast.success(`${gadget.product_title} Successfully Removed.`);
   }
 
   const handleIncreasePrice = p => {
@@ -117,6 +118,7 @@ const App = () => {
                           ></Outlet>
                         </div>
                         <Footer></Footer>
+                        <ToastContainer></ToastContainer>
                       </div>
                     </CartContext.Provider>
                   </WishContext.Provider>

@@ -40,18 +40,16 @@ const Dashboard = () => {
             it all!
           </p>
           <div className="flex items-center gap-6 justify-center pt-6">
-            <button
+            <NavLink
               onClick={() => handleAcitveBtn2(true)}
               className=" bg-black text-c1 border px-10 py-3 text-lg font-semibold rounded-full"
             >
               Cart
-            </button>
-            <button
+            </NavLink>
+            <NavLink
               onClick={() => handleAcitveBtn(false)}
               className="bg-c1  text-white border px-10 py-3 text-lg font-semibold rounded-full"
-            >
-              Wishlist
-            </button>
+            >Wishlist</NavLink>
           </div>
         </div>
         <div
@@ -98,7 +96,10 @@ const Dashboard = () => {
             <div className="modal-action inline">
               <form method="dialog">
                 <button
-                  onClick={() => {handlePurchaseBtn(); handleBackHome()}}
+                  onClick={() => {
+                    handlePurchaseBtn();
+                    handleBackHome();
+                  }}
                   className="btn w-full rounded-full mt-6 text-lg text-c2"
                 >
                   Close

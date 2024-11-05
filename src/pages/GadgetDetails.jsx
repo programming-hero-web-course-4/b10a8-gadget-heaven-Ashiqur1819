@@ -124,7 +124,6 @@ const GadgetDetails = () => {
           </div>
         </div>
       </div>
-      <ToastContainer></ToastContainer>
     </div>
   );
 };
