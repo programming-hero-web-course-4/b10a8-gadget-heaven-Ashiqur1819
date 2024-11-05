@@ -2,9 +2,9 @@ import React from 'react';
 
 const Error = () => {
     return (
-        <div>
-            <h2>This is error page</h2>
-        </div>
+      <div className=" h-svh flex items-center justify-center">
+        <h2 className="text-4xl font-bold">No Data Found!</h2>
+      </div>
     );
 };
 

@@ -95,7 +95,11 @@ const GadgetDetails = () => {
             </p>
             <div className="flex items-center gap-5">
               <div>
-                <Link className="flex items-center gap-2 bg-c1 w-fit py-3 px-6 text-white font-medium rounded-full ">
+                <Link
+                  className={`flex items-center gap-2 bg-c1 w-fit py-3 px-6 text-white font-medium rounded-full ${
+                    availability || "btn-disabled bg-gray-400"
+                  }`}
+                >
                   <button
                     onClick={() => {
                       handleAddToCart();
@@ -108,7 +112,11 @@ const GadgetDetails = () => {
                   <MdOutlineShoppingCart className="text-xl"></MdOutlineShoppingCart>
                 </Link>
               </div>
-              <div className="text-xl md:text-xl bg-white p-2 md:p-3 rounded-full border">
+              <div
+                className={`text-xl md:text-xl bg-white p-2 md:p-3 rounded-full border ${
+                  availability || "btn-disabled bg-gray-400"
+                }`}
+              >
                 <Link>
                   <div
                     onClick={() => {
