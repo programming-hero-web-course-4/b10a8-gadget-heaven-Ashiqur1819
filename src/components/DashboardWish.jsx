@@ -9,10 +9,10 @@ import { addToCartContext, HandleCartContext, HandleRemoveContex } from '../App'
 const DashboardWish = ({gadget}) => {
       const handleAddToCartBtn = useContext(HandleCartContext);
       const handleAddToCart = useContext(addToCartContext);
-      const handleRemove = useContext(HandleRemoveContex)
+      const [handleRemove, addGadget2] = useContext(HandleRemoveContex);
       
     const { product_image, product_title, description, price } = gadget;
-    console.log(gadget)
+
     return (
       <div className="md:flex items-center gap-6 border bg-white rounded-xl p-6 mb-6">
         <figure>

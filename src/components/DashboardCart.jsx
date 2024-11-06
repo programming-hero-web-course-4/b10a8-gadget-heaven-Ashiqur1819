@@ -3,9 +3,9 @@ import { RxCross2 } from "react-icons/rx";
 import { HandleRemoveContex } from "../App";
 
 
-const DashboardCart = ({ gadget }) => {
+const DashboardCart = ({gadget}) => {
+  const [handleRemove, handleDecreasePrice, addGadget] = useContext(HandleRemoveContex)
   const { product_image, product_title, description, price } = gadget;
-  const [handleRemove, handleDecreasePrice] = useContext(HandleRemoveContex)
 
 
   return (

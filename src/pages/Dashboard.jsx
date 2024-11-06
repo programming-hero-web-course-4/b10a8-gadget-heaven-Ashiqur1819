@@ -14,8 +14,16 @@ import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
 
-  const [addGadget, setAddGadget, handleSortPrice, handlePurchaseBtn] = useContext(GadgetContex);
-  const [addGadget2, setAddGadget2] = useContext(GadgetContex)
+  const [
+    addGadget,
+    setAddGadget,
+    handleSortPrice,
+    handlePurchaseBtn,
+    handleAddToWishBtn,
+    handleAddToCartBtn,
+  ] = useContext(GadgetContex);
+
+
 
 
   const [active, setActive] = useState(true)
@@ -45,7 +53,7 @@ const Dashboard = () => {
           </p>
           <div className="flex items-center gap-6 justify-center pt-6">
             <button
-              onClick={() => handleAcitveBtn(true)}
+              onClick={() => {handleAcitveBtn(true)}}
               className={`border px-10 py-3 text-lg font-semibold rounded-full text-c1 ${
                 active ? "bg-white text-c1" : "bg-c1 text-white"
               }`}
@@ -53,7 +61,7 @@ const Dashboard = () => {
               Cart
             </button>
             <button
-              onClick={() => handleAcitveBtn(false)}
+              onClick={() => {handleAcitveBtn(false)}}
               className={`border px-10 py-3 text-lg font-semibold rounded-full ${
                 !active ? "bg-white text-c1" : "bg-c1 text-white"
               }`}
@@ -88,21 +96,20 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 mt-8 mb-24">
-          {/* <div>
-            {addGadget.map(
-              (gadget) =>
-                active && <DashboardCart gadget={gadget}></DashboardCart>
-            )}
-          </div>
           <div>
-            {addGadget2.map(
-              (gadget) =>
-                !active && <DashboardWish gadget={gadget}></DashboardWish>
+            {addGadget.map(
+              (gadget, index) =>
+               active ? <DashboardCart gadget={gadget} key={index}></DashboardCart> : <DashboardWish gadget={gadget} key={index}></DashboardWish>
             )}
-          </div> */}
-          {
-            addGadget.map(gadget => !active && <DashboardWish gadget={gadget}></DashboardWish>)
-          }
+  
+         
+                {/* {active && <DashboardCart></DashboardCart> || !active && <DashboardWish></DashboardWish>} */}
+               
+            
+          </div>
+          {/* {
+            addGadget.map(gadget => active && <DashboardWish gadget={gadget}></DashboardWish>)
+          } */}
         </div>
         <dialog id="my_modal_1" className="modal">
           <div className="modal-box">

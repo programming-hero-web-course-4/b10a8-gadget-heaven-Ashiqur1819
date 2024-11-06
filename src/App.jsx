@@ -49,7 +49,6 @@ const App = () => {
     }else{
       toast.error(`${gadget.product_title} Already Added To Cart!`);
     }
-    console.log(gadget)
   }
 
   const handleAddToWishBtn = (gadget) => {
@@ -64,7 +63,6 @@ const App = () => {
     }else{
       toast.error(`${gadget.product_title} Already Added To Wishlist!`);
     }
-        console.log(gadget)
   }
 
   const handleRemove = (gadget) => {
@@ -99,11 +97,18 @@ const App = () => {
   return (
     <HelmetProvider>
       <GadgetContex.Provider
-        value={[addGadget, addGadget2, handleSortPrice, handlePurchaseBtn]}
+        value={[
+          addGadget,
+          addGadget2,
+          handleSortPrice,
+          handlePurchaseBtn,
+          handleAddToCartBtn,
+          handleAddToWishBtn,
+        ]}
       >
         <HandlePrice.Provider value={[price, setPrice]}>
           <HandleRemoveContex.Provider
-            value={[handleRemove, handleDecreasePrice]}
+            value={[handleRemove, handleDecreasePrice, addGadget2, addGadget]}
           >
             <HandleWishContext.Provider value={handleAddToWishBtn}>
               <HandleCartContext.Provider
