@@ -3,15 +3,16 @@ import { Link } from "react-router-dom";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
 import { useContext } from "react";
-import { addToCartContext, CartContext, HandleCartContext, HandleWishContext, WishContext, WishlishContext } from "../App";
+import {
+  addToCartContext,
+  HandleCartContext,
+  HandleWishContext,
+  WishlishContext,
+} from "../App";
 
 import ReactStars from "react-rating-stars-component";
-import { ToastContainer } from "react-toastify";
-
-
 
 const GadgetDetails = () => {
-
   const gadgets = useLoaderData();
   const { product_id } = useParams();
 
@@ -27,20 +28,17 @@ const GadgetDetails = () => {
     warranty_period,
   } = gadget;
 
-   const firstExample = {
-     size: 25,
-     value: rating,
-     edit: false,
-   };
+  const firstExample = {
+    size: 25,
+    value: rating,
+    edit: false,
+  };
 
-
-  const [handleAddToCartBtn, handleIncreasePrice] = useContext(HandleCartContext)
-  const handleAddToCart = useContext(addToCartContext)
-  const handleWishlist = useContext(WishlishContext)
-  const handleAddToWishBtn = useContext(HandleWishContext)
-
-
-
+  const [handleAddToCartBtn, handleIncreasePrice] =
+    useContext(HandleCartContext);
+  const handleAddToCart = useContext(addToCartContext);
+  const handleWishlist = useContext(WishlishContext);
+  const {handleAddToWishBtn} = useContext(HandleWishContext);
 
   return (
     <div className="mb-[480px]">

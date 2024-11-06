@@ -1,37 +1,30 @@
-
-import { NavLink, useLocation} from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
 import { useContext } from "react";
 import { CartContext, WishContext } from "../App";
 
-
-
-
-
 const Navbar = () => {
+  const addToCart = useContext(CartContext);
+  const addToWish = useContext(WishContext);
+  const location = useLocation();
 
-  const [addToCart, setAddToCart] = useContext(CartContext)
-  const [addToWish, setAddToWish] = useContext(WishContext)
-  const location = useLocation()
-
-
-    const links = (
-      <>
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/statistics">Statistics</NavLink>
-        </li>
-        <li>
-          <NavLink to="/dashboard">Dashboard</NavLink>
-        </li>
-        <li>
-          <NavLink to="/contact">Contact Us</NavLink>
-        </li>
-      </>
-    );
+  const links = (
+    <>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/statistics">Statistics</NavLink>
+      </li>
+      <li>
+        <NavLink to="/dashboard">Dashboard</NavLink>
+      </li>
+      <li>
+        <NavLink to="/contact">Contact Us</NavLink>
+      </li>
+    </>
+  );
   return (
     <div className={`${location.pathname === "/" ? "bg-c1" : "bg-white"}`}>
       <div className="navbar  px-4 md:px-8 lg:px-12 py-6 max-w-7xl mx-auto">
@@ -40,7 +33,9 @@ const Navbar = () => {
             <div
               tabIndex={0}
               role="button"
-              className={`lg:hidden ${location.pathname === "/" ? "text-white" : "text-c1"}`}
+              className={`lg:hidden ${
+                location.pathname === "/" ? "text-white" : "text-c1"
+              }`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

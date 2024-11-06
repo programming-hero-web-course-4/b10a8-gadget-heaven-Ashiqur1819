@@ -4,7 +4,6 @@ import Footer from './components/Footer';
 import { createContext, useState } from 'react';
 import { toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useRef, useEffect } from "react";
 import { ToastContainer } from 'react-toastify';
 import { HelmetProvider } from "react-helmet-async";
 
@@ -45,7 +44,7 @@ const App = () => {
       handleAddToCart(setAddToCart(addToCart + 1));
     const newAddToGadget = [...addGadget, gadget];
     setAddGadget(newAddToGadget);
-    toast.success(`${gadget.product_title} Successfully Added To Wishlist.`);
+    toast.success(`${gadget.product_title} Successfully Added To Cart.`);
     }else{
       toast.error(`${gadget.product_title} Already Added To Cart!`);
     }
@@ -58,6 +57,7 @@ const App = () => {
     if(!validGadget2){
       handleWishlish(setAddToWish(addToWish + 1))
     const newAddToGadget2 = [...addGadget2, gadget]
+
     setAddGadget2(newAddToGadget2);
     toast.success(`${gadget.product_title} Successfully Added To Wishlist.`);
     }else{
@@ -70,6 +70,14 @@ const App = () => {
     setAddGadget(remainingGadgets)
     handleAddToCart(setAddToCart(addToCart - 1));
     toast.success(`${gadget.product_title} Successfully Removed.`);
+  }
+
+  const handleRemove2 = (gadget) => {
+    const remainingGadgets = addGadget2.filter(gad => gad.product_id !== gadget.product_id)
+    setAddGadget2(remainingGadgets)
+    handleWishlish(setAddToWish(addToWish - 1));
+    toast.success(`${gadget.product_title} Successfully Removed.`);
+    console.log('dkfkdj')
   }
 
   const handleIncreasePrice = p => {
@@ -97,20 +105,13 @@ const App = () => {
   return (
     <HelmetProvider>
       <GadgetContex.Provider
-        value={[
-          addGadget,
-          addGadget2,
-          handleSortPrice,
-          handlePurchaseBtn,
-          handleAddToCartBtn,
-          handleAddToWishBtn,
-        ]}
+        value={[addGadget, addGadget2, handleSortPrice, handlePurchaseBtn]}
       >
         <HandlePrice.Provider value={[price, setPrice]}>
           <HandleRemoveContex.Provider
-            value={[handleRemove, handleDecreasePrice, addGadget2, addGadget]}
+            value={[handleRemove, handleDecreasePrice, handleRemove2]}
           >
-            <HandleWishContext.Provider value={handleAddToWishBtn}>
+            <HandleWishContext.Provider value={{ handleAddToWishBtn }}>
               <HandleCartContext.Provider
                 value={[handleAddToCartBtn, handleIncreasePrice]}
               >

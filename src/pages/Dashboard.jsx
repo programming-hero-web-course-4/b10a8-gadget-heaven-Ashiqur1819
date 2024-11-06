@@ -19,11 +19,9 @@ const Dashboard = () => {
     setAddGadget,
     handleSortPrice,
     handlePurchaseBtn,
-    handleAddToWishBtn,
-    handleAddToCartBtn,
+    newAddToGadget,
   ] = useContext(GadgetContex);
-
-
+  const [a, addGadget2, setAddGadget2] = useContext(GadgetContex)
 
 
   const [active, setActive] = useState(true)
@@ -39,6 +37,7 @@ const Dashboard = () => {
     setActive(status)
   }
 
+ 
     return (
       <div>
         <Helmet>
@@ -53,7 +52,7 @@ const Dashboard = () => {
           </p>
           <div className="flex items-center gap-6 justify-center pt-6">
             <button
-              onClick={() => {handleAcitveBtn(true)}}
+              onClick={() => handleAcitveBtn(true)}
               className={`border px-10 py-3 text-lg font-semibold rounded-full text-c1 ${
                 active ? "bg-white text-c1" : "bg-c1 text-white"
               }`}
@@ -61,7 +60,7 @@ const Dashboard = () => {
               Cart
             </button>
             <button
-              onClick={() => {handleAcitveBtn(false)}}
+              onClick={() => handleAcitveBtn(false)}
               className={`border px-10 py-3 text-lg font-semibold rounded-full ${
                 !active ? "bg-white text-c1" : "bg-c1 text-white"
               }`}
@@ -71,17 +70,23 @@ const Dashboard = () => {
           </div>
         </div>
         <div
-          className={`md:flex items-center justify-between max-w-7xl mx-auto px-4 md:px-8 lg:px-12 mt-8 ${
-            active || "hidden"
-          }`}
+          className={`md:flex items-center justify-between max-w-7xl mx-auto px-4 md:px-8 lg:px-12 mt-8`}
         >
-          <div className="flex items-center md:gap-24 lg:gap-96 justify-between mb-3">
+          <div
+            className={`flex items-center md:gap-24 lg:gap-96 justify-between mb-3 ${
+              active || "hidden"
+            }`}
+          >
             <h2 className="text-2xl font-bold text-c2">Cart</h2>
             <h2 className="text-2xl font-bold text-c2">Total Cost: ${price}</h2>
           </div>
-          <div className="flex items-center justify-center gap-6">
+          <div
+            className={`flex items-center justify-center gap-6 ${
+              active || "hidden"
+            }`}
+          >
             <button
-              onClick={() => handleSortPrice(newAddToGadget)}
+              onClick={() => handleSortPrice(addGadget)}
               className="flex items-center gap-2 px-6 py-3 border-2 border-c1 rounded-full text-c1 text-base"
             >
               Sort by Price
@@ -98,14 +103,15 @@ const Dashboard = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 mt-8 mb-24">
           <div>
             {addGadget.map(
-              (gadget, index) =>
-               active ? <DashboardCart gadget={gadget} key={index}></DashboardCart> : <DashboardWish gadget={gadget} key={index}></DashboardWish>
+              (gadget) =>
+                active && <DashboardCart gadget={gadget}></DashboardCart>
             )}
-  
-         
-                {/* {active && <DashboardCart></DashboardCart> || !active && <DashboardWish></DashboardWish>} */}
-               
-            
+          </div>
+          <div>
+            {addGadget2.map(
+              (gadget) =>
+                !active && <DashboardWish gadget={gadget}></DashboardWish>
+            )}
           </div>
           {/* {
             addGadget.map(gadget => active && <DashboardWish gadget={gadget}></DashboardWish>)

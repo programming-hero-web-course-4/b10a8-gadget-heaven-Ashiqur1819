@@ -1,7 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
-const Banner = ({title, subtitle}) => {
+const Banner = () => {
   return (
     <div className="hero bg-c1 pb-60 pt-6 px-4 md:px-8 lg:px-12">
       <div className="hero-content text-center">

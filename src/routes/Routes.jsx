@@ -1,17 +1,12 @@
-import { createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Error from "../pages/Error";
 import Home from "../pages/Home";
 import Statistics from "../pages/Statistics";
 import Dashboard from "../pages/Dashboard";
-import Contact from "../pages/Contact"
+import Contact from "../pages/Contact";
 import Gadgets from "../components/Gadgets";
-import GadgetDetails from "../pages/GadgetDetails"
-import DashboardCart from "../components/DashboardCart";
-import DashboardWish from "../components/DashboardWish";
-
-
-
+import GadgetDetails from "../pages/GadgetDetails";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <Dashboard></Dashboard>
+        element: <Dashboard></Dashboard>,
       },
       {
         path: "/contact",
@@ -52,10 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/gadget/:product_id",
         loader: () => fetch("../gadgets.json"),
-        element: <GadgetDetails></GadgetDetails>
-      }
+        element: <GadgetDetails></GadgetDetails>,
+      },
     ],
   },
 ]);
 
-export {router}
+export { router };
