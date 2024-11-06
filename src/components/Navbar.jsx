@@ -33,13 +33,15 @@ const Navbar = () => {
       </>
     );
   return (
-    <div
-      className={`${location.pathname === "/" ? "bg-c1" : "bg-white"}`}
-    >
+    <div className={`${location.pathname === "/" ? "bg-c1" : "bg-white"}`}>
       <div className="navbar  px-4 md:px-8 lg:px-12 py-6 max-w-7xl mx-auto">
         <div className="navbar-start gap-3 items-center text-white">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className={`lg:hidden ${location.pathname === "/" ? "text-white" : "text-c1"}`}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-7 w-7"
@@ -57,7 +59,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-md dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-sm text-white font-medium flex flex-col gap-3"
+              className="menu menu-md dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow text-sm text-c1 bg-white font-medium flex flex-col gap-3"
             >
               {links}
             </ul>

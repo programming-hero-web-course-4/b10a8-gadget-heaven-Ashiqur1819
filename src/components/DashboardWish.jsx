@@ -12,13 +12,14 @@ const DashboardWish = ({gadget}) => {
       const handleRemove = useContext(HandleRemoveContex)
       
     const { product_image, product_title, description, price } = gadget;
+    console.log(gadget)
     return (
-      <div className="flex items-center gap-6 border bg-white rounded-xl p-6 mb-6">
+      <div className="md:flex items-center gap-6 border bg-white rounded-xl p-6 mb-6">
         <figure>
           <img src={product_image} className="w-40 rounded-xl" alt="" />
         </figure>
         <div className="space-y-3 flex-grow">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-4 mt-3">
             <h3 className="text-2xl text-c2 font-bold">{product_title}</h3>
             <div className="text-xl text-red-600 font-semibold border border-red-600 p-1 rounded-full cursor-pointer">
               <RxCross2 onClick={() => handleRemove(gadget)}></RxCross2>

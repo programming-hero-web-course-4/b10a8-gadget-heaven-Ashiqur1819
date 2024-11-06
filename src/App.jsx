@@ -6,6 +6,7 @@ import { toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRef, useEffect } from "react";
 import { ToastContainer } from 'react-toastify';
+import { HelmetProvider } from "react-helmet-async";
 
 export const CartContext = createContext(0);
 export const WishContext = createContext(0);
@@ -48,6 +49,7 @@ const App = () => {
     }else{
       toast.error(`${gadget.product_title} Already Added To Cart!`);
     }
+    console.log(gadget)
   }
 
   const handleAddToWishBtn = (gadget) => {
@@ -62,7 +64,7 @@ const App = () => {
     }else{
       toast.error(`${gadget.product_title} Already Added To Wishlist!`);
     }
-
+        console.log(gadget)
   }
 
   const handleRemove = (gadget) => {
@@ -95,40 +97,42 @@ const App = () => {
 
 
   return (
-    <GadgetContex.Provider
-      value={[addGadget, handleSortPrice, handlePurchaseBtn]}
-    >
-      <HandlePrice.Provider value={[price, setPrice]}>
-        <HandleRemoveContex.Provider
-          value={[handleRemove, handleDecreasePrice]}
-        >
-          <HandleWishContext.Provider value={handleAddToWishBtn}>
-            <HandleCartContext.Provider
-              value={[handleAddToCartBtn, handleIncreasePrice]}
-            >
-              <WishlishContext.Provider value={handleWishlish}>
-                <addToCartContext.Provider value={handleAddToCart}>
-                  <WishContext.Provider value={[addToWish, setAddToWish]}>
-                    <CartContext.Provider value={[addToCart, setAddToCart]}>
-                      <div className="font-sora bg-base-200">
-                        <Navbar></Navbar>
-                        <div>
-                          <Outlet
-                            handleAddToCartBtn={handleAddToCartBtn}
-                          ></Outlet>
+    <HelmetProvider>
+      <GadgetContex.Provider
+        value={[addGadget, addGadget2, handleSortPrice, handlePurchaseBtn]}
+      >
+        <HandlePrice.Provider value={[price, setPrice]}>
+          <HandleRemoveContex.Provider
+            value={[handleRemove, handleDecreasePrice]}
+          >
+            <HandleWishContext.Provider value={handleAddToWishBtn}>
+              <HandleCartContext.Provider
+                value={[handleAddToCartBtn, handleIncreasePrice]}
+              >
+                <WishlishContext.Provider value={handleWishlish}>
+                  <addToCartContext.Provider value={handleAddToCart}>
+                    <WishContext.Provider value={[addToWish, setAddToWish]}>
+                      <CartContext.Provider value={[addToCart, setAddToCart]}>
+                        <div className="font-sora bg-base-200">
+                          <Navbar></Navbar>
+                          <div>
+                            <Outlet
+                              handleAddToCartBtn={handleAddToCartBtn}
+                            ></Outlet>
+                          </div>
+                          <Footer></Footer>
+                          <ToastContainer></ToastContainer>
                         </div>
-                        <Footer></Footer>
-                        <ToastContainer></ToastContainer>
-                      </div>
-                    </CartContext.Provider>
-                  </WishContext.Provider>
-                </addToCartContext.Provider>
-              </WishlishContext.Provider>
-            </HandleCartContext.Provider>
-          </HandleWishContext.Provider>
-        </HandleRemoveContex.Provider>
-      </HandlePrice.Provider>
-    </GadgetContex.Provider>
+                      </CartContext.Provider>
+                    </WishContext.Provider>
+                  </addToCartContext.Provider>
+                </WishlishContext.Provider>
+              </HandleCartContext.Provider>
+            </HandleWishContext.Provider>
+          </HandleRemoveContex.Provider>
+        </HandlePrice.Provider>
+      </GadgetContex.Provider>
+    </HelmetProvider>
   );
 };
 

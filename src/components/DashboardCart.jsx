@@ -9,9 +9,9 @@ const DashboardCart = ({ gadget }) => {
 
 
   return (
-    <div className="flex items-center gap-6 border bg-white rounded-xl p-6 mb-6">
+    <div className="md:flex items-center gap-6 border bg-white rounded-xl p-6 mb-6">
       <figure>
-        <img src={product_image} className="w-40 rounded-xl" alt="" />
+        <img src={product_image} className="lg:w-40 rounded-xl" alt="" />
       </figure>
       <div className="space-y-3 flex-grow">
         <div className="flex items-center justify-between">

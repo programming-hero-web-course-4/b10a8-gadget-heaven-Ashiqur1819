@@ -53,7 +53,7 @@ const GadgetDetails = () => {
             it all!
           </p>
         </div>
-        <div className="flex items-center gap-12 max-w-5xl mx-auto p-6 border bg-white rounded-xl absolute top-52 right-0 left-0">
+        <div className="lg:flex items-center gap-12 max-w-5xl lg:mx-auto p-6 border bg-white rounded-xl absolute top-52 right-0 left-0 mx-4">
           <div>
             <figure>
               <img

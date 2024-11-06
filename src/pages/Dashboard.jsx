@@ -7,13 +7,17 @@ import DashboardWish from "../components/DashboardWish";
 import { FaSortAmountUp } from "react-icons/fa";
 import Group from "../assets/Group.png"
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 
 
 const Dashboard = () => {
 
-  const [newAddToGadget, handleSortPrice, handlePurchaseBtn] = useContext(GadgetContex);
+  const [addGadget, setAddGadget, handleSortPrice, handlePurchaseBtn] = useContext(GadgetContex);
+  const [addGadget2, setAddGadget2] = useContext(GadgetContex)
+
+  console.log(typeof addGadget, typeof addGadget2)
   const [active, setActive] = useState(true)
   const [price, setPrice] = useContext(HandlePrice)
   const navigate = useNavigate()
@@ -26,12 +30,12 @@ const Dashboard = () => {
   const handleAcitveBtn = (status) => {
     setActive(status)
   }
-  const handleAcitveBtn2 = (status) => {
-    setActive(status)
-  }
 
     return (
       <div>
+        <Helmet>
+          <title>Gadgets | Dashboard</title>
+        </Helmet>
         <div className="h-96 text-center space-y-3 pt-12 mx-auto px-4 md:px-8 lg:px-12 bg-c1">
           <h2 className="text-4xl font-bold text-white">Dashboard</h2>
           <p className="text-white max-w-4xl mx-auto">
@@ -40,26 +44,34 @@ const Dashboard = () => {
             it all!
           </p>
           <div className="flex items-center gap-6 justify-center pt-6">
-            <NavLink
-              onClick={() => handleAcitveBtn2(true)}
-              className=" bg-black text-c1 border px-10 py-3 text-lg font-semibold rounded-full"
+            <button
+              onClick={() => handleAcitveBtn(true)}
+              className={`border px-10 py-3 text-lg font-semibold rounded-full text-c1 ${
+                active ? "bg-white text-c1" : "bg-c1 text-white"
+              }`}
             >
               Cart
-            </NavLink>
-            <NavLink
+            </button>
+            <button
               onClick={() => handleAcitveBtn(false)}
-              className="bg-c1  text-white border px-10 py-3 text-lg font-semibold rounded-full"
-            >Wishlist</NavLink>
+              className={`border px-10 py-3 text-lg font-semibold rounded-full ${
+                !active ? "bg-white text-c1" : "bg-c1 text-white"
+              }`}
+            >
+              Wishlist
+            </button>
           </div>
         </div>
         <div
-          className={`flex items-center justify-between max-w-7xl mx-auto px-4 md:px-8 lg:px-12 mt-8 ${
+          className={`md:flex items-center justify-between max-w-7xl mx-auto px-4 md:px-8 lg:px-12 mt-8 ${
             active || "hidden"
           }`}
         >
-          <h2 className="text-2xl font-bold text-c2">Cart</h2>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center md:gap-24 lg:gap-96 justify-between mb-3">
+            <h2 className="text-2xl font-bold text-c2">Cart</h2>
             <h2 className="text-2xl font-bold text-c2">Total Cost: ${price}</h2>
+          </div>
+          <div className="flex items-center justify-center gap-6">
             <button
               onClick={() => handleSortPrice(newAddToGadget)}
               className="flex items-center gap-2 px-6 py-3 border-2 border-c1 rounded-full text-c1 text-base"
@@ -76,11 +88,18 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 mt-8 mb-24">
-          {newAddToGadget.map(
-            (gadget) =>
-              (active && <DashboardCart gadget={gadget}></DashboardCart>) ||
-              (!active && <DashboardWish gadget={gadget}></DashboardWish>)
-          )}
+          {/* <div>
+            {addGadget.map(
+              (gadget) =>
+                active && <DashboardCart gadget={gadget}></DashboardCart>
+            )}
+          </div> */}
+          <div>
+            {addGadget2.map(
+              (gadget) =>
+                active && <DashboardWish gadget={gadget}></DashboardWish>
+            )}
+          </div>
         </div>
         <dialog id="my_modal_1" className="modal">
           <div className="modal-box">

@@ -5,6 +5,7 @@
     "product_image": "https://i.ibb.co.com/7vD9BS2/Smartphone-X12.jpg",
     "category": "Smartphones",
     "price": 799,
+    "is_new": true,
     "description": "A powerful smartphone with a stunning display and excellent camera quality.",
     "Specification": [
       "6.5-inch OLED Display",
@@ -23,6 +24,7 @@
     "product_image": "https://i.ibb.co.com/vmxZdwr/Smartphone-Ultra-Max-20.webp",
     "category": "Smartphones",
     "price": 999,
+    "is_new": true,
     "description": "Flagship smartphone with ultra-high performance and advanced camera setup.",
     "Specification": [
       "6.8-inch AMOLED Display",
@@ -95,6 +97,7 @@
     "product_image": "https://i.ibb.co.com/StB8P6h/Smartphone-Fold-X.webp",
     "category": "Smartphones",
     "price": 1499,
+    "is_new": true,
     "description": "Folding smartphone with dual displays and a unique, futuristic design.",
     "Specification": [
       "7.6-inch Foldable OLED Display",
@@ -149,6 +152,7 @@
     "product_image": "https://i.ibb.co.com/LQCBP4J/Professional-Laptop-Work-Pro-17.png",
     "category": "Laptops",
     "price": 1399,
+    "is_new": true,
     "description": "Professional-grade laptop with high-end performance for multitasking and heavy workloads.",
     "Specification": [
       "17-inch 4K UHD Display",
@@ -204,6 +208,7 @@
     "product_image": "https://i.ibb.co.com/M2FjfRp/Smartwatch-Luxe-Edition.jpg",
     "category": "Smartwatches",
     "price": 289,
+    "is_new": true,
     "description": "Luxury smartwatch with elegant design, health tracking, and customizable watch faces.",
     "Specification": [
       "1.2-inch OLED Display",
@@ -240,6 +245,7 @@
     "product_image": "https://i.ibb.co.com/28Byyz3/Wireless-Charging-Pad.webp",
     "category": "Accessories",
     "price": 29,
+    "is_new": true,
     "description": "Fast wireless charging pad compatible with Qi-enabled devices for convenient charging.",
     "Specification": [
       "10W Fast Charging",
@@ -258,6 +264,7 @@
     "product_image": "https://i.ibb.co.com/DRR53bB/Noise-Cancelling-Over-Ear-Headphones.webp",
     "category": "Accessories",
     "price": 149,
+    "is_new": true,
     "description": "High-quality over-ear headphones with active noise cancellation and deep bass.",
     "Specification": [
       "Active Noise Cancellation",
