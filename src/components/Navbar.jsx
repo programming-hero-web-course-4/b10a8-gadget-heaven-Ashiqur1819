@@ -14,7 +14,7 @@ const Navbar = () => {
   const [addToCart, setAddToCart] = useContext(CartContext)
   const [addToWish, setAddToWish] = useContext(WishContext)
   const location = useLocation()
-  console.log(location)
+
 
     const links = (
       <>

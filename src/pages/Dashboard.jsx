@@ -17,7 +17,7 @@ const Dashboard = () => {
   const [addGadget, setAddGadget, handleSortPrice, handlePurchaseBtn] = useContext(GadgetContex);
   const [addGadget2, setAddGadget2] = useContext(GadgetContex)
 
-  console.log(typeof addGadget, typeof addGadget2)
+
   const [active, setActive] = useState(true)
   const [price, setPrice] = useContext(HandlePrice)
   const navigate = useNavigate()
@@ -93,13 +93,16 @@ const Dashboard = () => {
               (gadget) =>
                 active && <DashboardCart gadget={gadget}></DashboardCart>
             )}
-          </div> */}
+          </div>
           <div>
             {addGadget2.map(
               (gadget) =>
-                active && <DashboardWish gadget={gadget}></DashboardWish>
+                !active && <DashboardWish gadget={gadget}></DashboardWish>
             )}
-          </div>
+          </div> */}
+          {
+            addGadget.map(gadget => !active && <DashboardWish gadget={gadget}></DashboardWish>)
+          }
         </div>
         <dialog id="my_modal_1" className="modal">
           <div className="modal-box">
