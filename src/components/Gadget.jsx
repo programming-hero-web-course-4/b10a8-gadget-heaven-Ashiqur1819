@@ -14,7 +14,7 @@ const Gadget = ({ gadget }) => {
           />
         </figure>
         <h3 className="text-xl font-semibold text-c2 mt-3">{product_title}</h3>
-        <p className="text-c3 font-medium">Price: ${price}</p>
+        <p className="text-c3 font-medium mt-1">Price: ${price}</p>
       </div>
       <Link to={`/gadget/${product_id}`}>
         <button className="text-left border-2 w-36 py-3 px-4 rounded-full border-c1 text-c1 font-medium">

@@ -10,21 +10,22 @@ const Footer = () => {
         </div>
         <div className="divider px-3 md:px-8 lg:px-12"></div>
         <div className="footer p-6 justify-center gap-12 md:gap-40 lg:gap-60">
-          <nav className="flex flex-col gap-2 items-center text-c3">
-            <h6 className="text-c2 text-lg font-semibold mb-3">Services</h6>
-            <a className="link link-hover">Branding</a>
-            <a className="link link-hover">Design</a>
-            <a className="link link-hover">Marketing</a>
-            <a className="link link-hover">Advertisement</a>
+          <nav className="flex flex-col gap-2  text-c3">
+            <h6 className="text-c2 text-lg font-semibold mb-3">Products</h6>
+            <a className="link link-hover">Smartphones</a>
+            <a className="link link-hover">Laptops</a>
+            <a className="link link-hover">Tablets</a>
+            <a className="link link-hover">Smartwatches</a>
+            <a className="link link-hover">Accessories</a>
           </nav>
-          <nav className="flex flex-col gap-2 items-center text-c3">
-            <h6 className=" text-c2 text-lg font-semibold mb-3">Company</h6>
-            <a className="link link-hover">About us</a>
+          <nav className="flex flex-col gap-2  text-c3">
+            <h6 className=" text-c2 text-lg font-semibold mb-3">Quick Links</h6>
+            <a className="link link-hover">Home</a>
+            <a className="link link-hover">Statistics</a>
+            <a className="link link-hover">Dashboard</a>
             <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Jobs</a>
-            <a className="link link-hover">Press kit</a>
           </nav>
-          <nav className="flex flex-col gap-2 items-center text-c3">
+          <nav className="flex flex-col gap-2  text-c3">
             <h6 className="text-c2 text-lg font-semibold mb-3">Legal</h6>
             <a className="link link-hover">Terms of use</a>
             <a className="link link-hover">Privacy policy</a>

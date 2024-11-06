@@ -9,7 +9,7 @@ import {
 } from "../App";
 
 const DashboardWish = ({ gadget }) => {
-  const handleAddToCartBtn = useContext(HandleCartContext);
+  const [handleAddToCartBtn] = useContext(HandleCartContext);
   const handleAddToCart = useContext(addToCartContext);
   const [handleRemove,a, handleRemove2] = useContext(HandleRemoveContex);
 

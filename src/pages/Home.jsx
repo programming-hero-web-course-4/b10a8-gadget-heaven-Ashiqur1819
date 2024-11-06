@@ -15,7 +15,7 @@ const Home = () => {
         <Hero></Hero>
       </div>
       <div className="mb-12">
-        <h2 className="text-4xl text-center font-bold text-c1">
+        <h2 className="text-4xl text-center font-bold text-c2">
           Explore Cutting-Edge Gadgets
         </h2>
       </div>

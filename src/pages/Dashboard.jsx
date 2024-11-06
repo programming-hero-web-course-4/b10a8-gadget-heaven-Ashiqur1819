@@ -46,9 +46,9 @@ const Dashboard = () => {
         <div className="h-96 text-center space-y-3 pt-12 mx-auto px-4 md:px-8 lg:px-12 bg-c1">
           <h2 className="text-4xl font-bold text-white">Dashboard</h2>
           <p className="text-white max-w-4xl mx-auto">
-            Explore the latest gadgets that will take your experience to the
-            next level. From smart devices to the coolest accessories, we have
-            it all!
+            Explore the latest and most fashionable accessories to enhance your
+            tech experience. From essential tools to stylish additions, find
+            everything you need to elevate your devices all in one place.
           </p>
           <div className="flex items-center gap-6 justify-center pt-6">
             <button
@@ -80,6 +80,13 @@ const Dashboard = () => {
             <h2 className="text-2xl font-bold text-c2">Cart</h2>
             <h2 className="text-2xl font-bold text-c2">Total Cost: ${price}</h2>
           </div>
+          <h2
+            className={`${
+              active ? "hidden" : "block"
+            } text-2xl font-bold text-c2`}
+          >
+            WishList
+          </h2>
           <div
             className={`flex items-center justify-center gap-6 ${
               active || "hidden"
@@ -94,7 +101,9 @@ const Dashboard = () => {
             </button>
             <button
               onClick={() => document.getElementById("my_modal_1").showModal()}
-              className="px-6 py-3 bg-c1 rounded-full border-2 border-c1 text-white text-base"
+              className={`px-6 py-3 bg-c1 rounded-full border-2 border-c1 text-white text-base ${
+                price == 0 && "btn-disabled bg-gray-400 border-gray-400"
+              }`}
             >
               Purchase
             </button>
@@ -104,18 +113,25 @@ const Dashboard = () => {
           <div>
             {addGadget.map(
               (gadget) =>
-                active && <DashboardCart gadget={gadget}></DashboardCart>
+                active && (
+                  <DashboardCart
+                    gadget={gadget}
+                    key={gadget.product_id}
+                  ></DashboardCart>
+                )
             )}
           </div>
           <div>
             {addGadget2.map(
               (gadget) =>
-                !active && <DashboardWish gadget={gadget}></DashboardWish>
+                !active && (
+                  <DashboardWish
+                    gadget={gadget}
+                    key={gadget.product_id}
+                  ></DashboardWish>
+                )
             )}
           </div>
-          {/* {
-            addGadget.map(gadget => active && <DashboardWish gadget={gadget}></DashboardWish>)
-          } */}
         </div>
         <dialog id="my_modal_1" className="modal">
           <div className="modal-box">
