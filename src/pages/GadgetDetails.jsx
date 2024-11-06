@@ -2,7 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import {
   addToCartContext,
   HandleCartContext,
@@ -15,6 +15,7 @@ import ReactStars from "react-rating-stars-component";
 const GadgetDetails = () => {
   const gadgets = useLoaderData();
   const { product_id } = useParams();
+
 
   const gadget = gadgets.find((gadget) => gadget.product_id === product_id);
   const {
