@@ -16,7 +16,6 @@ const GadgetDetails = () => {
   const gadgets = useLoaderData();
   const { product_id } = useParams();
 
-
   const gadget = gadgets.find((gadget) => gadget.product_id === product_id);
   const {
     product_image,
@@ -39,7 +38,7 @@ const GadgetDetails = () => {
     useContext(HandleCartContext);
   const handleAddToCart = useContext(addToCartContext);
   const handleWishlist = useContext(WishlishContext);
-  const {handleAddToWishBtn} = useContext(HandleWishContext);
+  const { handleAddToWishBtn } = useContext(HandleWishContext);
 
   return (
     <div className="mb-[480px]">

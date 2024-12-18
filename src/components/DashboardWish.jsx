@@ -11,7 +11,7 @@ import {
 const DashboardWish = ({ gadget }) => {
   const [handleAddToCartBtn] = useContext(HandleCartContext);
   const handleAddToCart = useContext(addToCartContext);
-  const [handleRemove,a, handleRemove2] = useContext(HandleRemoveContex);
+  const [handleRemove, a, handleRemove2] = useContext(HandleRemoveContex);
 
   const { product_image, product_title, description, price } = gadget;
 
